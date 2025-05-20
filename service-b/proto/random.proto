@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package random;
+
+option go_package = "proto/randompb;randompb";
+
+service RandomService {
+  rpc GetRandomStream (RandomRequest) returns (stream RandomResponse);
+}
+
+message RandomRequest {}
+
+message RandomResponse {
+  string word = 1;
+}
