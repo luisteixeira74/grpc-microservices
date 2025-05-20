@@ -2,14 +2,13 @@ syntax = "proto3";
 
 package random;
 
-option go_package = "proto/randompb;randompb";
+option go_package = "github.com/luisteixeira74/grpc-microservices/service-a/proto/randompb";
 
 service RandomService {
   rpc GetRandomStream (RandomRequest) returns (stream RandomResponse);
 }
 
 message RandomRequest {}
-
 message RandomResponse {
   string word = 1;
 }

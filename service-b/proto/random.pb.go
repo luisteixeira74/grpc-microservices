@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v3.21.12
-// source: proto/random.proto
+// source: random.proto
 
 package randompb
 
@@ -29,7 +29,7 @@ type RandomRequest struct {
 
 func (x *RandomRequest) Reset() {
 	*x = RandomRequest{}
-	mi := &file_proto_random_proto_msgTypes[0]
+	mi := &file_random_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -41,7 +41,7 @@ func (x *RandomRequest) String() string {
 func (*RandomRequest) ProtoMessage() {}
 
 func (x *RandomRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_random_proto_msgTypes[0]
+	mi := &file_random_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -54,7 +54,7 @@ func (x *RandomRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RandomRequest.ProtoReflect.Descriptor instead.
 func (*RandomRequest) Descriptor() ([]byte, []int) {
-	return file_proto_random_proto_rawDescGZIP(), []int{0}
+	return file_random_proto_rawDescGZIP(), []int{0}
 }
 
 type RandomResponse struct {
@@ -66,7 +66,7 @@ type RandomResponse struct {
 
 func (x *RandomResponse) Reset() {
 	*x = RandomResponse{}
-	mi := &file_proto_random_proto_msgTypes[1]
+	mi := &file_random_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -78,7 +78,7 @@ func (x *RandomResponse) String() string {
 func (*RandomResponse) ProtoMessage() {}
 
 func (x *RandomResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_random_proto_msgTypes[1]
+	mi := &file_random_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -91,7 +91,7 @@ func (x *RandomResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RandomResponse.ProtoReflect.Descriptor instead.
 func (*RandomResponse) Descriptor() ([]byte, []int) {
-	return file_proto_random_proto_rawDescGZIP(), []int{1}
+	return file_random_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *RandomResponse) GetWord() string {
@@ -101,35 +101,35 @@ func (x *RandomResponse) GetWord() string {
 	return ""
 }
 
-var File_proto_random_proto protoreflect.FileDescriptor
+var File_random_proto protoreflect.FileDescriptor
 
-const file_proto_random_proto_rawDesc = "" +
+const file_random_proto_rawDesc = "" +
 	"\n" +
-	"\x12proto/random.proto\x12\x06random\"\x0f\n" +
+	"\frandom.proto\x12\x06random\"\x0f\n" +
 	"\rRandomRequest\"$\n" +
 	"\x0eRandomResponse\x12\x12\n" +
 	"\x04word\x18\x01 \x01(\tR\x04word2S\n" +
 	"\rRandomService\x12B\n" +
-	"\x0fGetRandomStream\x12\x15.random.RandomRequest\x1a\x16.random.RandomResponse0\x01B\x19Z\x17proto/randompb;randompbb\x06proto3"
+	"\x0fGetRandomStream\x12\x15.random.RandomRequest\x1a\x16.random.RandomResponse0\x01B\x1aZ\x18service-b/proto/randompbb\x06proto3"
 
 var (
-	file_proto_random_proto_rawDescOnce sync.Once
-	file_proto_random_proto_rawDescData []byte
+	file_random_proto_rawDescOnce sync.Once
+	file_random_proto_rawDescData []byte
 )
 
-func file_proto_random_proto_rawDescGZIP() []byte {
-	file_proto_random_proto_rawDescOnce.Do(func() {
-		file_proto_random_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_random_proto_rawDesc), len(file_proto_random_proto_rawDesc)))
+func file_random_proto_rawDescGZIP() []byte {
+	file_random_proto_rawDescOnce.Do(func() {
+		file_random_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_random_proto_rawDesc), len(file_random_proto_rawDesc)))
 	})
-	return file_proto_random_proto_rawDescData
+	return file_random_proto_rawDescData
 }
 
-var file_proto_random_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_proto_random_proto_goTypes = []any{
+var file_random_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_random_proto_goTypes = []any{
 	(*RandomRequest)(nil),  // 0: random.RandomRequest
 	(*RandomResponse)(nil), // 1: random.RandomResponse
 }
-var file_proto_random_proto_depIdxs = []int32{
+var file_random_proto_depIdxs = []int32{
 	0, // 0: random.RandomService.GetRandomStream:input_type -> random.RandomRequest
 	1, // 1: random.RandomService.GetRandomStream:output_type -> random.RandomResponse
 	1, // [1:2] is the sub-list for method output_type
@@ -139,26 +139,26 @@ var file_proto_random_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_proto_random_proto_init() }
-func file_proto_random_proto_init() {
-	if File_proto_random_proto != nil {
+func init() { file_random_proto_init() }
+func file_random_proto_init() {
+	if File_random_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_random_proto_rawDesc), len(file_proto_random_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_random_proto_rawDesc), len(file_random_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_proto_random_proto_goTypes,
-		DependencyIndexes: file_proto_random_proto_depIdxs,
-		MessageInfos:      file_proto_random_proto_msgTypes,
+		GoTypes:           file_random_proto_goTypes,
+		DependencyIndexes: file_random_proto_depIdxs,
+		MessageInfos:      file_random_proto_msgTypes,
 	}.Build()
-	File_proto_random_proto = out.File
-	file_proto_random_proto_goTypes = nil
-	file_proto_random_proto_depIdxs = nil
+	File_random_proto = out.File
+	file_random_proto_goTypes = nil
+	file_random_proto_depIdxs = nil
 }

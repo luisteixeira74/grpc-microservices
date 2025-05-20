@@ -4,8 +4,9 @@ import (
 	"context"
 	"io"
 	"log"
-	pb "service-b/proto/randompb"
 	"time"
+
+	pb "github.com/luisteixeira74/grpc-microservices/service-b/proto/randompb"
 
 	"google.golang.org/grpc"
 )

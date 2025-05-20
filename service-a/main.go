@@ -4,9 +4,9 @@ import (
 	"log"
 	"math/rand"
 	"net"
-	pb "service-a/proto/randompb"
 	"time"
 
+	pb "github.com/luisteixeira74/grpc-microservices/service-a/proto/randompb"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )
