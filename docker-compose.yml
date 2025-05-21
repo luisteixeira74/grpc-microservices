@@ -1,16 +1,20 @@
-version: '3.8'
+version: "3.9"
 
 services:
-  server:
+  service-a:
     build:
       context: .
-      dockerfile: server/Dockerfile
+      dockerfile: service-a/Dockerfile
+    container_name: service-a
     ports:
-      - "50051:50051"
+      - "50051:50051"   # expõe a porta padrão gRPC
 
-  client:
+  service-b:
     build:
       context: .
-      dockerfile: client/Dockerfile
+      dockerfile: service-b/Dockerfile
+    container_name: service-b
     depends_on:
-      - server
+      - service-a
+    environment:
+      - SERVICE_A_ADDR=service-a:50051

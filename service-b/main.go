@@ -6,16 +6,29 @@ import (
 	"log"
 	"time"
 
-	pb "github.com/luisteixeira74/grpc-microservices/service-b/proto/randompb"
+	pb "github.com/luisteixeira74/grpc-microservices/proto"
 
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
 )
 
 func main() {
-	conn, err := grpc.Dial("service-a:50051", grpc.WithInsecure())
-	if err != nil {
-		log.Fatalf("❌ Could not connect to service-a: %v", err)
+	var conn *grpc.ClientConn
+	var err error
+
+	// Tenta conectar com retries e delay
+	for {
+		conn, err = grpc.Dial("service-a:50051", grpc.WithTransportCredentials(insecure.NewCredentials()))
+		if err == nil {
+			log.Println("✅ Connected to service-a")
+			break
+		}
+
+		log.Printf("❌ Failed to connect to service-a: %v", err)
+		log.Println("⏳ Retrying in 2 seconds...")
+		time.Sleep(2 * time.Second)
 	}
+
 	defer conn.Close()
 
 	client := pb.NewRandomServiceClient(conn)
@@ -29,6 +42,7 @@ func main() {
 	}
 
 	log.Println("📡 Receiving stream of random words from service-a:")
+
 	for {
 		res, err := stream.Recv()
 		if err == io.EOF {
@@ -36,8 +50,9 @@ func main() {
 			break
 		}
 		if err != nil {
-			log.Fatalf("❌ Error receiving stream: %v", err)
+			log.Fatalf("❌ Error receiving: %v", err)
 		}
+
 		log.Printf("📝 Received: %s", res.GetWord())
 	}
 }
