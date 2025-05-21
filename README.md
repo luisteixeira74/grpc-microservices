@@ -33,15 +33,22 @@ Projeto exemplo de microserviços em Go comunicando via gRPC, com Docker e Docke
 
 ## Como rodar
 
-- Esse projeto é muito simples de executar, bastando apenas gerar os arquivos .proto atraves do comando make all, criar 2 containers (service-a e service-b) e subir os containers:
+Esse projeto é muito simples de executar, bastando apenas gerar os arquivos .proto atraves do comando make all, criar 2 containers (service-a e service-b) e subir os containers:
 
-## Gerar os arquivos .proto
+---
 
-- Para criar os arquivos gerados a partir dos .proto, rode na raiz do projeto:
+## Gerar os arquivos .proto via comando `protoc`
+
+Os arquivos `.pb.go` dentro da pasta `proto/` são gerados automaticamente a partir dos arquivos `.proto` utilizando o comando:
 
 ```bash
 make all
 ```
+
+Para testar a geração pelo protoc, você pode excluir os arquivos .pb.go da pasta proto/, ao rodar novamente o comando ele criará novamente a partir dos .proto
+
+--- 
+
 ### Alternativa, rodar o comando direto na raiz:
 
 ```bash
@@ -78,3 +85,4 @@ service-b  | 2025/05/21 17:56:24 📝 Received: grpc
 service-b  | 2025/05/21 17:56:29 📝 Received: golang
 service-b  | 2025/05/21 17:56:34 📝 Received: grpc
 ```
+---
