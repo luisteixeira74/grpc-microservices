@@ -19,6 +19,8 @@ Projeto exemplo de microserviços em Go comunicando via gRPC, com Docker e Docke
 
 - Docker (versão recente)
 - Docker Compose
+- Protocol Buffers Compiler (compilador oficial para arquivos `.proto`)
+- Plugins para Go (`protoc-gen-go` e `protoc-gen-go-grpc`)
 
 ---
 
